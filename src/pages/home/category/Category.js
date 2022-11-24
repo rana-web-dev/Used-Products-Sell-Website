@@ -5,7 +5,7 @@ import Acer from "../../../assets/images/acer.png";
 
 const Category = () => {
   return (
-    <div className="grid gap-10 grid-cols-3 pt-20 max-w-6xl mx-auto">
+    <div className="grid gap-10 grid-cols-3 py-20 max-w-6xl mx-auto">
       <div className="card w-96 bg-base-100 shadow-xl image-full">
         <figure>
           <img src={Dell} alt="Shoes" />

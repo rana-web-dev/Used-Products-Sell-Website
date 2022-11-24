@@ -14,7 +14,7 @@ const Banner = () => {
           />
           </div>
           <div className="w-1/2">
-            <h1 className="text-5xl font-bold text-white mt-10">Future is now - New <br/> HPE ProLiant Gen11 <br/> Servers</h1>
+            <h1 className="text-5xl font-bold text-white mt-10">We are used laptop seller<br/> We provide all about laptop.</h1>
             <p className="py-6 text-xl text-white">
             Power business innovation with compute engineered for your hybrid world: a cloud operating experience, built-in security, and optimised performance.
             </p>
