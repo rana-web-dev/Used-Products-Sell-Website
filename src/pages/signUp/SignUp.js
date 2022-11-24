@@ -31,7 +31,7 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Sign Up</button>
-                <p>
+                <p className="mt-5">
                   have an account? <Link to="/login">Login</Link>
                 </p>
               </div>

@@ -32,7 +32,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
-                <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
+                <p className="mt-5">Don't have an account? <Link to='/signup'>Signup</Link></p>
               </div>
             </div>
           </div>
