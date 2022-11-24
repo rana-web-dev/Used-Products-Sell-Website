@@ -22,7 +22,7 @@ const Category = () => {
                 {brand.des}
               </p>
               <div className="card-actions justify-end">
-                <Link to={`/brands/${brand._id}`} className="btn btn-md bg-green-500 border-none">
+                <Link to={`/${brand.brand}/${brand._id}`} className="btn btn-md bg-green-500 border-none">
                   See Collection
                 </Link>
               </div>
