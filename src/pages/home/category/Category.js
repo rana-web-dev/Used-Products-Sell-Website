@@ -1,49 +1,35 @@
-import React from "react";
-import Dell from "../../../assets/images/dell.jpg";
-import Hp from "../../../assets/images/hp.png";
-import Acer from "../../../assets/images/acer.png";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Category = () => {
+  const [brandsProducts, setBrandsProducts] = useState();
+  useEffect(() => {
+    fetch("http://localhost:5000/brands")
+      .then((res) => res.json())
+      .then((data) => setBrandsProducts(data));
+  }, []);
   return (
     <div className="bg-orange-300">
-        <div className="grid gap-10 grid-cols-3 py-20 max-w-6xl mx-auto">
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img src={Dell} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Dell</h2>
-          <p>We have a lot of collection of Dell laptop. See more and choose one then order us.</p>
-          <div className="card-actions justify-end">
-            <button className="btn bg-purple-500 border-none">See Collection</button>
+      <div className="grid gap-10 grid-cols-3 py-20 max-w-6xl mx-auto">
+        {brandsProducts?.map((brand) => (
+          <div className="card bg-base-100 shadow-xl image-full" key={brand._id}>
+            <figure>
+              <img src={brand.image} alt="Shoes" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{brand.brand}</h2>
+              <p>
+                {brand.des}
+              </p>
+              <div className="card-actions justify-end">
+                <Link to={`/brands/${brand._id}`} className="btn btn-md bg-green-500 border-none">
+                  See Collection
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img src={Hp} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">HP</h2>
-          <p>Hp is the most popular Brand you know. You need HP laptop just order us. We have collection.</p>
-          <div className="card-actions justify-end">
-            <button className="btn bg-purple-500 border-none">See Collection </button>
-          </div>
-        </div>
-      </div>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img src={Acer} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Acer</h2>
-          <p>If you need Acer laptop just See collection then order Us.</p>
-          <div className="card-actions justify-end">
-            <button className="btn bg-purple-500 border-none">See Collection </button>
-          </div>
-        </div>
-      </div>
-        </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import Find from '../../../assets/images/find.jpg';
 
 const Support = () => {
   return (
@@ -8,7 +9,7 @@ const Support = () => {
           <div className="hero-content flex-col lg:flex-row-reverse justify-between">
             <div>
             <img
-              src="https://placeimg.com/260/400/arch"
+              src={Find}
               alt=''
               className="max-w-sm rounded-lg shadow-2xl"
             />

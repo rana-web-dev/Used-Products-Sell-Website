@@ -1,14 +1,13 @@
 import React from "react";
 import './nav.css';
 import { Link } from 'react-router-dom';
-import Banner from "../banner/Banner";
 import BannerBg from "../../../assets/images/banner-bg.orig";
 
 const Nav = () => {
 
     // Nav Link List
     const nav = <>
-        <li><Link to=''>Home</Link></li>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to=''>About</Link></li>
         <li><Link to=''>Content</Link></li>
         <li><Link to=''>Products</Link></li>
@@ -54,7 +53,6 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <Banner></Banner>
     </div>
   );
 };
