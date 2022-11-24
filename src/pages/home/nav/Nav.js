@@ -16,7 +16,7 @@ const Nav = () => {
  
   return (
     <div style={{ 
-      backgroundImage: `url(${BannerBg}), linear-gradient(to left, #6e6e6e, #101010)` 
+      backgroundImage: `url(${BannerBg})` 
     }}>
       <div>
         <div className="navbar justify-between max-w-6xl mx-auto">
