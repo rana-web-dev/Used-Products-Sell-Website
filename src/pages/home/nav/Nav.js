@@ -8,9 +8,7 @@ const Nav = () => {
     // Nav Link List
     const nav = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to=''>About</Link></li>
-        <li><Link to=''>Content</Link></li>
-        <li><Link to=''>Products</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
  
   return (

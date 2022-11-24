@@ -5,6 +5,8 @@ import Main from "../../layout/Main";
 import AcerDetails from "../../pages/acerDetails/AcerDetails";
 import BrandCollection from "../../pages/brandCollection/BrandCollection";
 import DellDetails from "../../pages/dellDetails/DellDetails";
+import Login from "../../pages/login/Login";
+import SignUp from "../../pages/signUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
       },
       {
         path: "/Hp/:id",
