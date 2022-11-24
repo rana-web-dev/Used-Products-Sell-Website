@@ -1,0 +1,19 @@
+.navbar h2 {
+    color: white;
+}
+.navbar ul li a {
+    color: white;
+}
+.navbar-start {
+    width: 178px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .navbar ul li a {
+        color: rgb(0, 0, 0);
+    }
+    .navbar-start {
+        width: 100%;
+    }
+}
