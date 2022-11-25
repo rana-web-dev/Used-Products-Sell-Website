@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../../layout/Home";
 import Main from "../../layout/Main";
 import AcerDetails from "../../pages/acerDetails/AcerDetails";
+import AddAProduct from "../../pages/addAproduct/AddAProduct";
 import Blogs from "../../pages/blogs/Blogs";
 import BrandCollection from "../../pages/brandCollection/BrandCollection";
 import DellDetails from "../../pages/dellDetails/DellDetails";
@@ -50,11 +51,17 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/Acer/${params.id}`),
         element: <PrivateRoutes><AcerDetails></AcerDetails></PrivateRoutes>
       },
-      {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>
-      }
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: '/dashboard/addProduct',
+        element: <AddAProduct></AddAProduct>
+      },
+    ]
   },
   {
     path: "*",
