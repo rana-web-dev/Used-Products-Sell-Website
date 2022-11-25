@@ -7,6 +7,7 @@ import BrandCollection from "../../pages/brandCollection/BrandCollection";
 import DellDetails from "../../pages/dellDetails/DellDetails";
 import Login from "../../pages/login/Login";
 import SignUp from "../../pages/signUp/SignUp";
+import PrivateRoutes from "../privateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -28,17 +29,17 @@ const router = createBrowserRouter([
       {
         path: "/Hp/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Hp/${params.id}`),
-        element: <BrandCollection></BrandCollection>
+        element: <PrivateRoutes><BrandCollection></BrandCollection></PrivateRoutes>
       },
       {
         path: "/Dell/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Dell/${params.id}`),
-        element: <DellDetails></DellDetails>
+        element: <PrivateRoutes><DellDetails></DellDetails></PrivateRoutes>
       },
       {
         path: "/Acer/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Acer/${params.id}`),
-        element: <AcerDetails></AcerDetails>
+        element: <PrivateRoutes><AcerDetails></AcerDetails></PrivateRoutes>
       }
     ],
   },
