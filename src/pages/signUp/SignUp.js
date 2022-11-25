@@ -27,8 +27,8 @@ const SignUp = () => {
       },
       body: JSON.stringify(userInfo),
     })
-      .then()
-      .catch();
+      .then(res => res.json())
+      .then(data => console.log(data));
 
     // create user with email and password
     createUser(email, password)
@@ -47,7 +47,6 @@ const SignUp = () => {
 
   return (
     <div>
-      {select}
       <div className="hero max-w-6xl mx-auto min-h-screen">
         <div className="hero-content w-1/2 flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
@@ -98,6 +97,7 @@ const SignUp = () => {
                     Buyer
                   </option>
                   <option value="seller">Seller</option>
+                  <option value="admin">Admin</option>
                 </select>
               </div>
               <div className="form-control mt-6">
