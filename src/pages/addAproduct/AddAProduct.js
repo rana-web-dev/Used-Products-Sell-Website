@@ -5,7 +5,9 @@ const AddAProduct = () => {
 
     const addProductHandle = (event) => {
         event.preventDefault();
-        
+        toast.success("Product Add Successfully.", {
+            position: toast.POSITION.TOP_CENTER
+          });
     }
 
   return (
