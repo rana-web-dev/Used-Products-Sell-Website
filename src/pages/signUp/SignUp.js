@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 
 const SignUp = () => {
-  const { user, createUser, updateUser } = useContext(authContext);
+  const { user, createUser, updateUser, googleSignIn } = useContext(authContext);
   console.log(user);
 
   // signup form handle

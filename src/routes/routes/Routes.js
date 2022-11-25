@@ -41,7 +41,8 @@ const router = createBrowserRouter([
       {
         path: "/Acer/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Acer/${params.id}`),
-        element: <PrivateRoutes><AcerDetails></AcerDetails></PrivateRoutes>
+        element: <AcerDetails></AcerDetails>
+        // element: <PrivateRoutes><AcerDetails></AcerDetails></PrivateRoutes>
       }
     ],
   },
