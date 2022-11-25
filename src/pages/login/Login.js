@@ -33,6 +33,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };
@@ -73,15 +74,14 @@ const Login = () => {
                 <p className="mt-5">
                   Don't have an account? <Link to="/signup">Signup</Link>
                 </p>
-                
               </div>
             </form>
             <button
-                  onClick={googleLogin}
-                  className="btn btn-success btn-sm mt-5 mb-5 w-1/2 mx-auto text-white"
-                >
-                  Google
-                </button>
+              onClick={googleLogin}
+              className="btn bg-purple-500 border-none btn-sm mt-5 mb-5 w-1/2 mx-auto text-white"
+            >
+              SignIn With Google
+            </button>
           </div>
         </div>
       </div>
