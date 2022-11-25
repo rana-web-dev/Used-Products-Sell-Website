@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 
 const SignUp = () => {
-  const { user, createUser, updateUser, googleSignIn } = useContext(authContext);
+  const { user, createUser, updateUser, googleSignIn } =
+    useContext(authContext);
   console.log(user);
 
   // signup form handle
@@ -13,7 +14,7 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    
+
     // create user with email and password
     createUser(email, password)
       .then((result) => {
@@ -24,12 +25,9 @@ const SignUp = () => {
         const userInfo = {
           displayName: name,
         };
-        updateUser(userInfo)
-        .then()
-        .catch()
+        updateUser(userInfo).then().catch();
       })
       .catch((error) => console.log(error));
-
 
     // update profile of user
     updateUser();
@@ -77,6 +75,14 @@ const SignUp = () => {
                   required
                 />
                 <label className="label"></label>
+              </div>
+              <div className="form-control">
+                <select className="select select-bordered w-full">
+                  <option value="buyer" disabled selected>
+                    Buyer
+                  </option>
+                  <option value="seller" >Seller</option>
+                </select>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Sign Up</button>
