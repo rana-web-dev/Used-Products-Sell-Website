@@ -6,7 +6,9 @@ const Category = () => {
   useEffect(() => {
     fetch("http://localhost:5000/brands")
       .then((res) => res.json())
-      .then((data) => setBrandsProducts(data));
+      .then((data) => {
+        setBrandsProducts(data)
+      });
   }, []);
   return (
     <div className="bg-orange-300">

@@ -29,12 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/Hp/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Hp/${params.id}`),
-        element: <PrivateRoutes><BrandCollection></BrandCollection></PrivateRoutes>
+        element: <BrandCollection></BrandCollection>
+        // element: <PrivateRoutes><BrandCollection></BrandCollection></PrivateRoutes>
       },
       {
         path: "/Dell/:id",
         loader: ({params}) => fetch(`http://localhost:5000/Dell/${params.id}`),
-        element: <PrivateRoutes><DellDetails></DellDetails></PrivateRoutes>
+        element: <DellDetails></DellDetails>
+        // element: <PrivateRoutes><DellDetails></DellDetails></PrivateRoutes>
       },
       {
         path: "/Acer/:id",

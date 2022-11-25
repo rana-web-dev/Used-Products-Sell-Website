@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import './nav.css';
 import { Link } from 'react-router-dom';
 import BannerBg from "../../../assets/images/banner-bg.orig";
+import { authContext } from "../../../context/AuthProvider";
 
 const Nav = () => {
+
+  const {user, logOut} = useContext(authContext);
 
     // Nav Link List
     const nav = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+          user? 
+          <li><Link onClick={logOut} >Logout</Link></li> 
+          : 
+          <li><Link to='/login'>Login</Link></li>
+        }
     </>
  
   return (
