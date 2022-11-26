@@ -9,7 +9,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
-  console.log(location.state);
 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -40,10 +39,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero max-w-6xl mx-auto min-h-screen">
-        <div className="hero-content w-1/2 flex-col lg:flex-row-reverse">
+      <div className="hero max-w-6xl mx-auto md:min-h-screen">
+        <div className="hero-content md:w-1/2 flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-            <form onSubmit={handleSignIn} className="card-body">
+            <form onSubmit={handleSignIn} className="card-body w-96 md:w-full">
               <div className="form-control">
                 <label className="label">
                   <label className="label-text">Email</label>
@@ -69,7 +68,7 @@ const Login = () => {
                 />
                 <label className="label"></label>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control">
                 <button className="btn btn-primary">Login</button>
                 <p className="mt-5">
                   Don't have an account? <Link to="/signup">Signup</Link>
@@ -78,7 +77,7 @@ const Login = () => {
             </form>
             <button
               onClick={googleLogin}
-              className="btn bg-purple-500 border-none btn-sm mt-5 mb-5 w-1/2 mx-auto text-white"
+              className="btn bg-purple-500 border-none btn-sm mb-5 w-1/2 mx-auto text-white"
             >
               SignIn With Google
             </button>

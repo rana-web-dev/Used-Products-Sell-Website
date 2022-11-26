@@ -19,7 +19,7 @@ const Banner = () => {
             className="max-w-sm rounded-lg"
           />
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <h1 className="text-5xl font-bold text-white mt-10">We are used laptop seller<br/> We provide all about laptop.</h1>
             <p className="py-6 text-xl text-white">
             Power business innovation with compute engineered for your hybrid world: a cloud operating experience, built-in security, and optimised performance.

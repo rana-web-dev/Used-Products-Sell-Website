@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="max-w-6xl mx-auto py-52 px-5">
+    <div className="max-w-6xl mx-auto py-10 md:py-48 px-5">
       <div className="mb-10">
         <h2 className="text-3xl font-bold">
           Q-1. What are the different ways to manage a state in a React

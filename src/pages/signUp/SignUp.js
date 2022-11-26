@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 import { authContext } from "../../context/AuthProvider";
 
 const SignUp = () => {
-  const [select, setSelect] = useState();
+  const [select, setSelect] = useState('buyer');
 
   const { user, createUser, updateUser } = useContext(authContext);
   console.log(user);
 
   // signup form handle
   const handleSignUp = (event) => {
+
+
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -35,6 +38,9 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("User Create Successfully.", {
+          position: toast.POSITION.TOP_CENTER
+        })
 
         // set user name that come from input name field
         const userInfo = {
@@ -43,14 +49,17 @@ const SignUp = () => {
         updateUser(userInfo).then().catch();
       })
       .catch((error) => console.log(error));
+
+      // Navigate root after create user
+      window.location.replace('/') 
   };
 
   return (
     <div>
-      <div className="hero max-w-6xl mx-auto min-h-screen">
-        <div className="hero-content w-1/2 flex-col lg:flex-row-reverse">
+      <div className="hero max-w-6xl mx-auto md:min-h-screen">
+        <div className="hero-content md:w-1/2 flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-            <form onSubmit={handleSignUp} className="card-body">
+            <form onSubmit={handleSignUp} className="card-body w-96 md:w-full">
               <div className="form-control">
                 <label className="label">
                   <label className="label-text">Name</label>

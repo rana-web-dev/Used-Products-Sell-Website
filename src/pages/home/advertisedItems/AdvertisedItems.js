@@ -7,8 +7,8 @@ const AdvertisedItems = () => {
   return (
     <div className="bg-orange-300">
       <div className="max-w-6xl mx-auto pt-20">
-        <div className="grid grid-cols-4 gap-4">
-          <div className="col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="md:col-span-2">
             <img src={HpPavilion} alt="" />
           </div>
           <div className="...">

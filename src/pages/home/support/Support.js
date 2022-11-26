@@ -3,7 +3,7 @@ import Find from '../../../assets/images/find.jpg';
 
 const Support = () => {
   return (
-    <div className="bg-base-200">
+    <div className="bg-base-200 py-10 md:py-36">
       <div className="max-w-6xl mx-auto">
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row-reverse justify-between">

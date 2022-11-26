@@ -16,17 +16,17 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const GoogleProvider = new GoogleAuthProvider();
   const [user, setUser] = useState();
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // create user with email and password
   const createUser = (email, password) => {
-    setLoading(true);
+    setLoading(false);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // email sign in
   const signIn = (email, password) => {
-    setLoading(true);
+    setLoading(false);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
