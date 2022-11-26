@@ -2,9 +2,9 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="max-w-6xl mx-auto py-10 md:py-48 px-5">
+    <div className="max-w-6xl mx-auto py-10 md:py-20 px-5">
       <div className="mb-10">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-2xl font-bold">
           Q-1. What are the different ways to manage a state in a React
           application?
         </h2>
@@ -18,7 +18,7 @@ const Blogs = () => {
         </p>
       </div>
       <div className="mb-10">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-2xl font-bold">
           Q-2. How does prototypical inheritance work?
         </h2>
         <p className="text-xl">
@@ -31,7 +31,7 @@ const Blogs = () => {
         </p>
       </div>
       <div className="mb-10">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-2xl font-bold">
           Q-3. What is a unit test? Why should we write unit tests?
         </h2>
         <p className="text-xl">
@@ -41,7 +41,7 @@ const Blogs = () => {
         </p>
       </div>
       <div className="mb-10">
-        <h2 className="text-3xl font-bold">Q-4. React vs. Angular vs. Vue?</h2>
+        <h2 className="text-2xl font-bold">Q-4. React vs. Angular vs. Vue?</h2>
         <p className="text-xl">
           <span className="text-orange-500">Answer: </span>
           Which is more popular React Vue or Angular? Popularity. According to a

@@ -7,8 +7,6 @@ const Banner = () => {
     <div style={{ 
       backgroundImage: `url(${BannerBg})` 
     }}>
-
-    
     <div className="max-w-6xl mx-auto py-10">
       <div className="hero">
         <div className="hero-content flex-col justify-between lg:flex-row-reverse">

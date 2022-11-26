@@ -23,7 +23,7 @@ const BrandCollection = () => {
             <p>Post Time: {product.postedTime}</p>
             <p>Seller Name: {product.sellerName}</p>
             <p>Year of Used: {product.yearsOfUse}</p>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-start">
               <label onClick={() => setProductsDetails(product)} htmlFor="book-now-modal" className="btn btn-sm">
                 Book Now
               </label>

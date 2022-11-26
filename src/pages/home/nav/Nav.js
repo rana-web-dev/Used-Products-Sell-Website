@@ -25,8 +25,8 @@ const Nav = () => {
  
   return (
     <div style={{ 
-      backgroundImage: `url(${BannerBg})` 
-    }}>
+      backgroundImage: `url(${BannerBg})`,
+    }}> 
       <div>
         <div className="navbar justify-between max-w-6xl mx-auto">
           <div className="navbar-start justify-between">

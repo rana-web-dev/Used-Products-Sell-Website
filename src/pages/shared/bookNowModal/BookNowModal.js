@@ -7,7 +7,7 @@ const BookNowModal = ({user, products}) => {
     event.preventDefault();
     const form = event.target;
     console.log(form);
-    toast.success("Submit Successfully.", {
+    toast.success("Booked Successfully.", {
       position: toast.POSITION.TOP_CENTER
     });
   }
