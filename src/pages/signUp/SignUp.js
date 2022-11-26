@@ -1,18 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { authContext } from "../../context/AuthProvider";
 
 const SignUp = () => {
-  const [select, setSelect] = useState('buyer');
+  const [select, setSelect] = useState("buyer");
 
   const { user, createUser, updateUser } = useContext(authContext);
   console.log(user);
 
   // signup form handle
   const handleSignUp = (event) => {
-
-
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -30,8 +28,8 @@ const SignUp = () => {
       },
       body: JSON.stringify(userInfo),
     })
-      .then(res => res.json())
-      .then(data => console.log(data));
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 
     // create user with email and password
     createUser(email, password)
@@ -39,8 +37,12 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         toast.success("User Create Successfully.", {
-          position: toast.POSITION.TOP_CENTER
-        })
+          position: toast.POSITION.TOP_CENTER,
+        });
+
+        // user && (
+        //   <Navigate to="/" replace={true} />
+        // )
 
         // set user name that come from input name field
         const userInfo = {
@@ -50,8 +52,8 @@ const SignUp = () => {
       })
       .catch((error) => console.log(error));
 
-      // Navigate root after create user
-      window.location.replace('/') 
+    // Navigate root after create user
+    // window.location.replace("/");
   };
 
   return (

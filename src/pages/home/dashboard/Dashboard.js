@@ -11,7 +11,6 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin(user?.email);
   const [isBuyer] = useBuyer(user?.email);
   const [isSeller] = useSeller(user?.email);
-  console.log(isSeller);
 
   return (
     <div>

@@ -16,7 +16,7 @@ const Nav = () => {
           user? 
           <>
           <li><Link to='/dashboard' >Dashboard</Link></li> 
-          <li><Link onClick={logOut} >Logout</Link></li> 
+          <li><Link onClick={logOut} to='/' >Logout</Link></li> 
           </>
           : 
           <li><Link to='/login'>Login</Link></li>

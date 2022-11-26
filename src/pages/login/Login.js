@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 
@@ -7,6 +7,7 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const [logInError, setLogInError] = useState();
 
   const from = location.state?.from?.pathname || "/";
 
@@ -21,10 +22,13 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error)
+        setLogInError(error.message);
+      });
   };
 
   const googleLogin = () => {
@@ -34,7 +38,10 @@ const Login = () => {
         console.log(user);
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setLogInError(error.message);
+      });
   };
 
   return (
@@ -66,8 +73,8 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label"></label>
               </div>
+              <span className="py-3 text-orange-500">{logInError}</span>
               <div className="form-control">
                 <button className="btn btn-primary">Login</button>
                 <p className="mt-5">

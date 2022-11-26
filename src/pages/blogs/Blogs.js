@@ -35,9 +35,15 @@ const Blogs = () => {
           Q-3. What is a unit test? Why should we write unit tests?
         </h2>
         <p className="text-xl">
-          <span className="text-orange-500">Answer: </span>
-          A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system. In most programming languages, that is a function, a subroutine, a method or property. The isolated part of the definition is important.
-          Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money, and helps developers write better code, more efficiently
+          <span className="text-orange-500">Answer: </span>A unit test is a way
+          of testing a unit - the smallest piece of code that can be logically
+          isolated in a system. In most programming languages, that is a
+          function, a subroutine, a method or property. The isolated part of the
+          definition is important. Unit testing ensures that all code meets
+          quality standards before it's deployed. This ensures a reliable
+          engineering environment where quality is paramount. Over the course of
+          the product development life cycle, unit testing saves time and money,
+          and helps developers write better code, more efficiently
         </p>
       </div>
       <div className="mb-10">
@@ -48,14 +54,18 @@ const Blogs = () => {
           survey by Stack Overflow 40.13% of the developers believe that React
           is the most commonly used JavaScript Framework. Angular and Vue follow
           it with 22.96% and 18.97%, respectively.<br></br>
-          <span className="text-purple-500">React: </span><br></br>
+          <span className="text-purple-500">React: </span>
+          <br></br>
           It's used for building interactive user interfaces and web
           applications quickly and efficiently with significantly less code than
           you would with vanilla JavaScript. In React, you develop your
           applications by creating reusable components that you can think of as
           independent Lego blocks.<br></br>
           <span className="text-purple-500">Angular: </span> <br></br>
-          Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your applications.
+          Angular is a platform and framework for building single-page client
+          applications using HTML and TypeScript. Angular is written in
+          TypeScript. It implements core and optional functionality as a set of
+          TypeScript libraries that you import into your applications.
           <br></br>
           <span className="text-purple-500">Vue: </span> <br></br>
           Vue (pronounced /vjuː/, like view) is a JavaScript framework for
@@ -63,7 +73,6 @@ const Blogs = () => {
           JavaScript and provides a declarative and component-based programming
           model that helps you efficiently develop user interfaces, be they
           simple or complex.
-          
         </p>
       </div>
     </div>

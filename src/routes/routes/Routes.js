@@ -9,6 +9,7 @@ import BrandCollection from "../../pages/brandCollection/BrandCollection";
 import DellDetails from "../../pages/dellDetails/DellDetails";
 import Dashboard from "../../pages/home/dashboard/Dashboard";
 import Login from "../../pages/login/Login";
+import MyProducts from "../../pages/myProducts/MyProducts";
 import NotFound from "../../pages/notFound/NotFound";
 import SignUp from "../../pages/signUp/SignUp";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes";
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         path: '/dashboard/addProduct',
         element: <AddAProduct></AddAProduct>
       },
+      {
+        path: '/dashboard/myProducts',
+        element: <MyProducts></MyProducts>
+      }
     ]
   },
   {

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 
 const useBuyer = email => {
     const [isBuyer, setIsBuyer] = useState(false);
-    console.log(isBuyer);
     const [isBuyerLoading, setIsBuyerLoading] = useState(true);
     useEffect(() => {
         if (email) {
