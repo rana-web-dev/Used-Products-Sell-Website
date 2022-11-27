@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
 const Category = () => {
-  const [brandsProducts, setBrandsProducts] = useState();
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    fetch("http://localhost:5000/brands")
-      .then((res) => res.json())
-      .then((data) => {
-        setBrandsProducts(data);
+
+    // used react query to brand data load
+    const {data: brandsProducts} = useQuery({
+      queryKey: ['brands'],
+      queryFn: async() => {
+        const res = await fetch("http://localhost:5000/brands");
+        const data = res.json();
         setLoading(false);
-      });
-  }, []);
+        return data;
+      }
+    })
+  
+
   return (
     <div className="bg-orange-300">
       {loading ? (

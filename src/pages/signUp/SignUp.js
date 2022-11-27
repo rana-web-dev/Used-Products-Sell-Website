@@ -1,10 +1,17 @@
 import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { authContext } from "../../context/AuthProvider";
+import useTitle from "../../title/title";
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
+
+
+  useTitle('SignUp');
   const [select, setSelect] = useState("buyer");
+  const [error, setError] = useState();
 
   const { user, createUser, updateUser } = useContext(authContext);
   console.log(user);
@@ -36,6 +43,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate('/')
         toast.success("User Create Successfully.", {
           position: toast.POSITION.TOP_CENTER,
         });
@@ -50,10 +58,16 @@ const SignUp = () => {
         };
         updateUser(userInfo).then().catch();
       })
-      .catch((error) => console.log(error));
+      .catch(error => {
+        console.log(error);
+        setError(error.message);
+      })
 
     // Navigate root after create user
     // window.location.replace("/");
+
+
+
   };
 
   return (
@@ -111,10 +125,11 @@ const SignUp = () => {
                   <option value="admin">Admin</option>
                 </select>
               </div>
-              <div className="form-control mt-6">
+              <span className="text-orange-500">{error}</span>
+              <div className="form-control mt-3">
                 <button className="btn btn-primary">Sign Up</button>
                 <p className="mt-5">
-                  have an account? <Link to="/login">Login</Link>
+                  have an account? <Link to="/login" className="text-orange-500">Login</Link>
                 </p>
               </div>
             </form>

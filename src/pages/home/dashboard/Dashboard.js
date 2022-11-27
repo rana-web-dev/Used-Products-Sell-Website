@@ -18,7 +18,7 @@ const Dashboard = () => {
       <div className="max-w-6xl mx-auto">
         <div className="drawer drawer-mobile">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content flex flex-col items-center justify-center">
+          <div className="drawer-content flex flex-col">
             <Outlet></Outlet>
             <label
               htmlFor="my-drawer-2"
@@ -33,21 +33,19 @@ const Dashboard = () => {
               {isAdmin && (
                 <>
                   <li>
-                    <Link>All Sellers</Link>
-                  </li>
-                  <li>
-                    <Link>All Buyers</Link>
+                    <Link to='/dashboard/allSeller'>All Sellers & Buyers</Link>
                   </li>
                 </>
               )}
               {isBuyer && (
                 <li>
-                  <Link>My orders</Link>
+                  <Link to='/dashboard/myOrders'>My Orders</Link>
                 </li>
               )}
               {isSeller && (
                 <li>
-                  <Link to="/dashboard/addProduct">Add A product</Link>
+                  <Link to="/dashboard/addProduct">Add A Product</Link>
+                  <Link to="/dashboard/myProducts">My Product</Link>
                 </li>
               )}
             </ul>

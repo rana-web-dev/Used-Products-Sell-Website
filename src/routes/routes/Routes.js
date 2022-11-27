@@ -4,6 +4,7 @@ import Home from "../../layout/Home";
 import Main from "../../layout/Main";
 import AcerDetails from "../../pages/acerDetails/AcerDetails";
 import AddAProduct from "../../pages/addAproduct/AddAProduct";
+import AllSeller from "../../pages/allSeller/AllSeller";
 import Blogs from "../../pages/blogs/Blogs";
 import BrandCollection from "../../pages/brandCollection/BrandCollection";
 import DellDetails from "../../pages/dellDetails/DellDetails";
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myProducts',
         element: <MyProducts></MyProducts>
+      },
+      {
+        path: '/dashboard/allSeller',
+        element: <AllSeller></AllSeller>
       }
     ]
   },

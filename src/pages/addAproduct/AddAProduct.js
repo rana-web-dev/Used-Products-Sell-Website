@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import useTitle from "../../title/title";
+import "./addProducts.css";
 
 const AddAProduct = () => {
+  useTitle('Add Product');
   const [condition, setCondition] = useState("Excellent");
   const [location, setLocation] = useState("Dhaka");
   const [category, setCategory] = useState("Dell");
@@ -16,14 +19,14 @@ const AddAProduct = () => {
     const description = form.description.value;
 
     const addProductFieldValue = {
-      productName,
-      price,
-      condition,
-      phone,
-      location,
-      category,
-      purchaseYear,
-      description,
+      productName: productName,
+      price: price,
+      condition: condition,
+      phone: phone,
+      location: location,
+      category: category,
+      purchaseYear: purchaseYear,
+      description: description,
     };
 
     console.log(
@@ -37,35 +40,35 @@ const AddAProduct = () => {
       description
     );
 
-    fetch("http://localhost:5000/addProducts", {
+    fetch("http://localhost:5000/addProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(addProductFieldValue),
     })
-      .then(res => res.json())
-      .then(data => console.log(data));
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 
-
-    // window.location.replace("/dashboard/myProducts");
     toast.success("Product Add Successfully.", {
       position: toast.POSITION.TOP_CENTER,
     });
+    window.location.replace('/dashboard/myProducts')
   };
 
   return (
     <div className="hero">
       <ToastContainer />
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card flex-shrink-0 w-full">
+        <div className="card card-w flex-shrink-0 w-full md:max-w-3xl">
           <form
             onSubmit={addProductHandle}
-            className="card-body grid grid-cols-1 md:grid-cols-4 w-96 md:w-full"
+            className="card-body grid grid-cols-1 md:grid-cols-2 w-96 md:w-full"
           >
             <div className="form-control">
               <label className="text-md label">Product Name</label>
               <input
+                required
                 name="productName"
                 type="text"
                 placeholder="Product Name"
@@ -75,6 +78,7 @@ const AddAProduct = () => {
             <div className="form-control">
               <label className="text-md label">Price</label>
               <input
+                required
                 name="price"
                 type="number"
                 placeholder="Price"
@@ -95,6 +99,7 @@ const AddAProduct = () => {
             <div className="form-control">
               <label className="text-md label">Phone</label>
               <input
+                required
                 name="phone"
                 type="number"
                 placeholder="Phone"
@@ -123,19 +128,21 @@ const AddAProduct = () => {
                 <option value="Acer">Acer</option>
               </select>
             </div>
-            <div className="form-control w-full ">
+            <div className="form-control w-full md:col-span-2 ">
               <label className="text-md label">Year of purchase:</label>
               <input
+                required
                 name="purchaseYear"
                 type="text"
                 placeholder="Year of purchase"
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control">
+            <div className="form-control md:col-span-2 ">
               <label className="text-md label">description</label>
               <textarea
-                className="border border-gray-400"
+                className="border border-gray-400 p-2"
+                placeholder="Product description..."
                 cols="20"
                 rows="4"
                 name="description"

@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
+import useTitle from "../../title/title";
 import BookNowModal from "../shared/bookNowModal/BookNowModal";
 
 const BrandCollection = () => {
-
+  useTitle('Hp collection');
   const {user} = useContext(authContext);
 
   const [productsDetails, setProductsDetails] = useState();
