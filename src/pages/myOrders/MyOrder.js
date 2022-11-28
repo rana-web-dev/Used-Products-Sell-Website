@@ -1,25 +1,30 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const MyOrder = () => {
-  const [myOrders, setMyOrders] = useState();
 
-  axios.get("http://localhost:5000/bookNow").then((data) => {
-    setMyOrders(data.data);
-    console.log(data.data);
-  });
+    // use react query to my order data load
+  const {data: myOrders, refetch} = useQuery({
+    queryKey: ['myOrders'],
+    queryFn: async() => {
+        const res = await fetch('http://localhost:5000/bookNow');
+        const data = res.json();
+        return data;
+    }
+  })
 
+  // delete my order data
   const deleteOrder = (order) => {
     fetch(`http://localhost:5000/deleteOrder/${order._id}`, {
         method: 'DELETE'
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        if(data.deletedCount > 0) {
+            refetch();
+        }
       })
   }
-
-  
 
   return (
     <div className="p-5">
@@ -28,7 +33,6 @@ const MyOrder = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {myOrders?.map((order) => (
             <div key={order._id}>
-              {console.log(order)}
               <div className="card bg-base-100 border">
                 <div className="card-body">
                   <h2 className="card-title">Product: {order.productName}</h2>
