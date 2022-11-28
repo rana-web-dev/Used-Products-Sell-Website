@@ -1,12 +1,15 @@
 import React, { useState, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
+import useSeller from "../../hook/isSeller";
 import useTitle from "../../title/title";
 import BookNowModal from "../shared/bookNowModal/BookNowModal";
 
 const AcerDetails = () => {
-  useTitle("Acer laptop collection");
   const { user } = useContext(authContext);
+  const {isSeller} = useSeller(user?.email);
+  console.log(isSeller);
+  useTitle("Acer laptop collection");
   const [productsDetails, setProductsDetails] = useState();
   const products = useLoaderData();
 

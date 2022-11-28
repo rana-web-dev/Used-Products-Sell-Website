@@ -19,17 +19,17 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col">
-            <Outlet></Outlet>
             <label
               htmlFor="my-drawer-2"
-              className="btn btn-primary drawer-button lg:hidden"
+              className="drawer-button lg:hidden text-3xl font-bold ml-5 cursor-pointer"
             >
-              Open drawer
+              &equiv;
             </label>
+            <Outlet></Outlet>
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side ">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            <ul className="menu p-4 w-52 border-r-2 text-base-content">
+            <ul className="menu p-4 w-52 border-r-2 bg-orange-200 md:bg-white">
               {isAdmin && (
                 <>
                   <li>

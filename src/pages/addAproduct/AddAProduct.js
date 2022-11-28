@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import useTitle from "../../title/title";
 import "./addProducts.css";
 
 const AddAProduct = () => {
+
+  // use navigate 
+  const navigate = useNavigate();
+
+  // add dynamic title
   useTitle('Add Product');
   const [condition, setCondition] = useState("Excellent");
   const [location, setLocation] = useState("Dhaka");
@@ -29,16 +35,6 @@ const AddAProduct = () => {
       description: description,
     };
 
-    console.log(
-      productName,
-      price,
-      condition,
-      phone,
-      location,
-      category,
-      purchaseYear,
-      description
-    );
 
     fetch("http://localhost:5000/addProduct", {
       method: "POST",
@@ -48,12 +44,14 @@ const AddAProduct = () => {
       body: JSON.stringify(addProductFieldValue),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-
-    toast.success("Product Add Successfully.", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-    window.location.replace('/dashboard/myProducts')
+      .then((data) => {
+        console.log(data)
+        toast.success("Product Add Successfully.", {
+          position: toast.POSITION.TOP_CENTER,
+        })
+        // navigate("/dashboard/myProducts")
+      })
+      window.location.replace("/dashboard/myProducts")    
   };
 
   return (

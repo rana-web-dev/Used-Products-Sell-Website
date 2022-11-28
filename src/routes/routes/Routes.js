@@ -14,6 +14,7 @@ import MyProducts from "../../pages/myProducts/MyProducts";
 import NotFound from "../../pages/notFound/NotFound";
 import SignUp from "../../pages/signUp/SignUp";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes";
+import MyOrder from "../../pages/myOrders/MyOrder";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/allSeller',
         element: <AllSeller></AllSeller>
+      },
+      {
+        path: '/dashboard/myOrders',
+        element: <MyOrder></MyOrder>
       }
     ]
   },

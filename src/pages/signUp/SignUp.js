@@ -45,13 +45,9 @@ const SignUp = () => {
         console.log(user);
         navigate('/')
         toast.success("User Create Successfully.", {
-          position: toast.POSITION.TOP_CENTER,
-        });
-
-        // user && (
-        //   <Navigate to="/" replace={true} />
-        // )
-
+          position: toast.POSITION.TOP_CENTER
+        })
+        
         // set user name that come from input name field
         const userInfo = {
           displayName: name,
@@ -62,12 +58,6 @@ const SignUp = () => {
         console.log(error);
         setError(error.message);
       })
-
-    // Navigate root after create user
-    // window.location.replace("/");
-
-
-
   };
 
   return (

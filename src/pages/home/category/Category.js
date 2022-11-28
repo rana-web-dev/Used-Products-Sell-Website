@@ -1,22 +1,35 @@
-import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import React, { useState, useEffect } from "react";
+// import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Category = () => {
+  const [brands, setBrands] = useState([]);
+  console.log(brands.data);
   const [loading, setLoading] = useState(true);
 
     // used react query to brand data load
-    const {data: brandsProducts} = useQuery({
-      queryKey: ['brands'],
-      queryFn: async() => {
-        const res = await fetch("http://localhost:5000/brands");
-        const data = res.json();
-        setLoading(false);
-        return data;
-      }
-    })
-  
+    // const {data: brandsProducts} = useQuery({
+    //   queryKey: ['brands'],
+    //   queryFn: async() => {
+    //     const res = await fetch("http://localhost:5000/brands");
+    //     const data = res.json();
+    //     setLoading(false);
+    //     return data;
+    //   }
+    // })
 
+    // use axios to brands data load
+    useEffect( () => {
+      axios.get('http://localhost:5000/brands')
+      .then(data => {
+        console.log(data);
+        setBrands(data);
+        setLoading(false)
+      })
+    }, [])
+
+  
   return (
     <div className="bg-orange-300">
       {loading ? (
@@ -39,7 +52,7 @@ const Category = () => {
         </div>
       ) : (
         <div className="grid gap-10 grid-cols-1 md:grid-cols-3 px-5 py-10 md:py-20 max-w-6xl mx-auto">
-          {brandsProducts?.map((brand) => (
+          {brands.data?.map((brand) => (
             <div
               className="card bg-base-100 shadow-xl image-full"
               key={brand._id}

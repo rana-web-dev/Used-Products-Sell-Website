@@ -5,7 +5,7 @@ import useTitle from "../../title/title";
 const AllSeller = () => {
   useTitle('All Seller & Buyer');
 
-  // use react query
+  // use react query to load sellers and buyers 2
   const { data: allSeller, refetch } = useQuery({
     queryKey: ["allSeller"],
     queryFn: async () => {
@@ -15,7 +15,7 @@ const AllSeller = () => {
     },
   });
 
-  // delete user
+  // delete seller or buyer user
   const deleteUser = (seller) => {
     fetch(`http://localhost:5000/users/${seller._id}`, {
       method: "DELETE",
