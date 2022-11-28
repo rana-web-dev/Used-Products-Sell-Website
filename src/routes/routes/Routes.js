@@ -15,6 +15,7 @@ import NotFound from "../../pages/notFound/NotFound";
 import SignUp from "../../pages/signUp/SignUp";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes";
 import MyOrder from "../../pages/myOrders/MyOrder";
+import Payment from "../../pages/payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -40,19 +41,31 @@ const router = createBrowserRouter([
       {
         path: "/Hp/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/Hp/${params.id}`),
-        element: <PrivateRoutes><BrandCollection></BrandCollection></PrivateRoutes>
+        element: (
+          <PrivateRoutes>
+            <BrandCollection></BrandCollection>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/Dell/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/Dell/${params.id}`),
-        element: <PrivateRoutes><DellDetails></DellDetails></PrivateRoutes>
+        element: (
+          <PrivateRoutes>
+            <DellDetails></DellDetails>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/Acer/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/Acer/${params.id}`),
-        element: <PrivateRoutes><AcerDetails></AcerDetails></PrivateRoutes>
+        element: (
+          <PrivateRoutes>
+            <AcerDetails></AcerDetails>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
@@ -61,22 +74,26 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: '/dashboard/addProduct',
-        element: <AddAProduct></AddAProduct>
+        path: "/dashboard/addProduct",
+        element: <AddAProduct></AddAProduct>,
       },
       {
-        path: '/dashboard/myProducts',
-        element: <MyProducts></MyProducts>
+        path: "/dashboard/myProducts",
+        element: <MyProducts></MyProducts>,
       },
       {
-        path: '/dashboard/allSeller',
-        element: <AllSeller></AllSeller>
+        path: "/dashboard/allSeller",
+        element: <AllSeller></AllSeller>,
       },
       {
-        path: '/dashboard/myOrders',
-        element: <MyOrder></MyOrder>
-      }
-    ]
+        path: "/dashboard/myOrders",
+        element: <MyOrder></MyOrder>,
+      },
+      {
+        path: "/dashboard/payment",
+        element: <Payment></Payment>,
+      },
+    ],
   },
   {
     path: "*",

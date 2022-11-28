@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import { useQuery } from "@tanstack/react-query";
 
 const MyOrder = () => {
@@ -44,7 +45,7 @@ const MyOrder = () => {
                     >
                       Cancel
                     </button>
-                    <button className="btn btn-sm justify-end ml-3 bg-blue-500 border-none">Pay</button>
+                    <Link to='/dashboard/payment'><button className="btn btn-sm justify-end ml-3 bg-blue-500 border-none">Pay</button></Link>
                   </div>
                 </div>
               </div>
