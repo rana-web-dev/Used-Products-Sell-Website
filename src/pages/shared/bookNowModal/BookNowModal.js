@@ -13,6 +13,7 @@ const BookNowModal = ({ user, products }) => {
     const resalePrice = form.resalePrice.value;
     const phone = form.phone.value;
     const location = form.location.value;
+    const image = form.image.value;
 
     // book input value make object to post on database
     const bookNow = {
@@ -21,21 +22,22 @@ const BookNowModal = ({ user, products }) => {
       productName: productName,
       resalePrice: resalePrice,
       phone: phone,
-      location: location
-    }
+      location: location,
+      image: image,
+    };
 
     // post on database book now data
-    fetch('http://localhost:5000/bookNow', {
-      method: 'POST',
+    fetch("https://resale-server-seven.vercel.app/bookNow", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(bookNow)
+      body: JSON.stringify(bookNow),
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
 
     toast.success("Booked Successfully.", {
       position: toast.POSITION.TOP_CENTER,
@@ -49,6 +51,7 @@ const BookNowModal = ({ user, products }) => {
           <input type="checkbox" id="book-now-modal" className="modal-toggle" />
           <div className="modal">
             <form onSubmit={submit} className="modal-box">
+              <input name="image" value={product.image} />
               <input
                 name="userName"
                 type="text"

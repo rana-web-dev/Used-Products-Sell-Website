@@ -3,13 +3,13 @@ import { toast, ToastContainer } from "react-toastify";
 import useTitle from "../../title/title";
 
 const AllSeller = () => {
-  useTitle('All Seller & Buyer');
+  useTitle("All Seller & Buyer");
 
   // use react query to load sellers and buyers 2
   const { data: allSeller, refetch } = useQuery({
     queryKey: ["allSeller"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://resale-server-seven.vercel.app/users");
       const data = res.json();
       return data;
     },
@@ -17,7 +17,7 @@ const AllSeller = () => {
 
   // delete seller or buyer user
   const deleteUser = (seller) => {
-    fetch(`http://localhost:5000/users/${seller._id}`, {
+    fetch(`https://resale-server-seven.vercel.app/users/${seller._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -26,15 +26,15 @@ const AllSeller = () => {
         if (data.deletedCount > 0) {
           refetch();
           toast.success("User Delete Successfully.", {
-            position: toast.POSITION.TOP_CENTER
-          })
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
       });
   };
 
   return (
     <div className="px-5">
-      <ToastContainer/>
+      <ToastContainer />
       <h2 className="text-center text-2xl my-10">
         All Seller: {allSeller?.length}
       </h2>

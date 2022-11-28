@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from "react";
 // import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 const Category = () => {
   const [brands, setBrands] = useState([]);
   console.log(brands.data);
   const [loading, setLoading] = useState(true);
 
-    // used react query to brand data load
-    // const {data: brandsProducts} = useQuery({
-    //   queryKey: ['brands'],
-    //   queryFn: async() => {
-    //     const res = await fetch("http://localhost:5000/brands");
-    //     const data = res.json();
-    //     setLoading(false);
-    //     return data;
-    //   }
-    // })
+  // used react query to brand data load
+  // const {data: brandsProducts} = useQuery({
+  //   queryKey: ['brands'],
+  //   queryFn: async() => {
+  //     const res = await fetch("https://resale-server-seven.vercel.app/brands");
+  //     const data = res.json();
+  //     setLoading(false);
+  //     return data;
+  //   }
+  // })
 
-    // use axios to brands data load
-    useEffect( () => {
-      axios.get('http://localhost:5000/brands')
-      .then(data => {
-        console.log(data);
-        setBrands(data);
-        setLoading(false)
-      })
-    }, [])
+  // use axios to brands data load
+  useEffect(() => {
+    axios.get("https://resale-server-seven.vercel.app/brands").then((data) => {
+      console.log(data);
+      setBrands(data);
+      setLoading(false);
+    });
+  }, []);
 
-  
   return (
     <div className="bg-orange-300">
       {loading ? (

@@ -4,21 +4,25 @@ import { toast, ToastContainer } from "react-toastify";
 import useTitle from "../../title/title";
 
 const MyProducts = () => {
-
   // use react query to data load 1
   const { data: allProducts } = useQuery({
     queryKey: ["allProducts"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allProducts");
+      const res = await fetch(
+        "https://resale-server-seven.vercel.app/allProducts"
+      );
       const data = res.json();
       return data;
     },
   });
 
   const deleteProduct = (product) => {
-    fetch(`http://localhost:5000/deleteProducts/${product._id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://resale-server-seven.vercel.app/deleteProducts/${product._id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

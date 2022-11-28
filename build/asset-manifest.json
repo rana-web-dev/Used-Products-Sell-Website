@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.11bb8509.css",
+    "main.js": "/static/js/main.249719cf.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/image.orig": "/static/media/image.78150be52b152843e60e.orig",
+    "static/media/HP-ZBook-Create-G7-.jpg": "/static/media/HP-ZBook-Create-G7-.4dc3adacd41d14dd8dec.jpg",
+    "static/media/envy-series.jpg": "/static/media/envy-series.219516e0581dc5a84f70.jpg",
+    "static/media/hp-pavilion-series.jpg": "/static/media/hp-pavilion-series.fed8cd85a162f497f577.jpg",
+    "static/media/banner-bg.orig": "/static/media/banner-bg.ed80c517dba811489159.orig",
+    "static/media/find.jpg": "/static/media/find.3e650a261c1613f6b024.jpg",
+    "static/media/notFound404.webp": "/static/media/notFound404.1ff272ab04d72293b616.webp",
+    "index.html": "/index.html",
+    "main.11bb8509.css.map": "/static/css/main.11bb8509.css.map",
+    "main.249719cf.js.map": "/static/js/main.249719cf.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11bb8509.css",
+    "static/js/main.249719cf.js"
+  ]
+}

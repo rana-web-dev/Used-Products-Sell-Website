@@ -5,11 +5,9 @@ import { authContext } from "../../context/AuthProvider";
 import useTitle from "../../title/title";
 
 const SignUp = () => {
-
   const navigate = useNavigate();
 
-
-  useTitle('SignUp');
+  useTitle("SignUp");
   const [select, setSelect] = useState("buyer");
   const [error, setError] = useState();
 
@@ -28,7 +26,7 @@ const SignUp = () => {
 
     const userInfo = { name, email, userType };
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://resale-server-seven.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,10 +41,10 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate('/')
+        navigate("/");
         toast.success("User Create Successfully.", {
-          position: toast.POSITION.TOP_CENTER
-        })
+          position: toast.POSITION.TOP_CENTER,
+        });
 
         // set user name that come from input name field
         const userInfo = {
@@ -54,10 +52,10 @@ const SignUp = () => {
         };
         updateUser(userInfo).then().catch();
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         setError(error.message);
-      })
+      });
   };
 
   return (
@@ -119,7 +117,10 @@ const SignUp = () => {
               <div className="form-control mt-3">
                 <button className="btn btn-primary">Sign Up</button>
                 <p className="mt-5">
-                  have an account? <Link to="/login" className="text-orange-500">Login</Link>
+                  have an account?{" "}
+                  <Link to="/login" className="text-orange-500">
+                    Login
+                  </Link>
                 </p>
               </div>
             </form>

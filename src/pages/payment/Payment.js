@@ -1,47 +1,45 @@
 import React from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const Payment = () => {
+  // payment field value
+  const payment = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const fname = form.fname.value;
+    const lname = form.lname.value;
+    const card = form.target.value;
+    const expireDate = form.expireDate.value;
+    const note = form.note.value;
 
-    // payment field value
-    const payment = event => {
-        event.preventDefault();
-        const form = event.target;
-        const fname = form.fname.value;
-        const lname = form.lname.value;
-        const card = form.target.value;
-        const expireDate = form.expireDate.value;
-        const note = form.note.value;
+    const paymentInfo = {
+      firstName: fname,
+      lastName: lname,
+      card: card,
+      expireDate: expireDate,
+      note: note,
+    };
 
-        const paymentInfo = {
-            firstName: fname,
-            lastName: lname,
-            card: card,
-            expireDate: expireDate,
-            note: note,
-        }
-        
-        fetch('http://localhost:5000/payment', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(paymentInfo)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            form.reset();
-            toast.success("Payment Success", {
-                position: toast.POSITION.TOP_CENTER
-            })
-        })
-    }
-    
+    fetch("https://resale-server-seven.vercel.app/payment", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(paymentInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        form.reset();
+        toast.success("Payment Success", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
+  };
 
   return (
     <div className="p-5">
-        <ToastContainer/>
+      <ToastContainer />
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card card-w flex-shrink-0 w-full md:max-w-3xl">

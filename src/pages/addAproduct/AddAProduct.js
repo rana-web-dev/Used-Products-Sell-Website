@@ -5,12 +5,11 @@ import useTitle from "../../title/title";
 import "./addProducts.css";
 
 const AddAProduct = () => {
-
-  // use navigate 
+  // use navigate
   const navigate = useNavigate();
 
   // add dynamic title
-  useTitle('Add Product');
+  useTitle("Add Product");
   const [condition, setCondition] = useState("Excellent");
   const [location, setLocation] = useState("Dhaka");
   const [category, setCategory] = useState("Dell");
@@ -35,8 +34,7 @@ const AddAProduct = () => {
       description: description,
     };
 
-
-    fetch("http://localhost:5000/addProduct", {
+    fetch("https://resale-server-seven.vercel.app/addProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,13 +43,13 @@ const AddAProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         toast.success("Product Add Successfully.", {
           position: toast.POSITION.TOP_CENTER,
-        })
+        });
         // navigate("/dashboard/myProducts")
-      })
-      window.location.replace("/dashboard/myProducts")    
+      });
+    window.location.replace("/dashboard/myProducts");
   };
 
   return (

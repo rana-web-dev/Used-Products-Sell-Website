@@ -40,7 +40,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/Hp/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/Hp/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://resale-server-seven.vercel.app/Hp/${params.id}`),
         element: (
           <PrivateRoutes>
             <BrandCollection></BrandCollection>
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/Dell/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Dell/${params.id}`),
+          fetch(`https://resale-server-seven.vercel.app/Dell/${params.id}`),
         element: (
           <PrivateRoutes>
             <DellDetails></DellDetails>
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
       {
         path: "/Acer/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Acer/${params.id}`),
+          fetch(`https://resale-server-seven.vercel.app/Acer/${params.id}`),
         element: (
           <PrivateRoutes>
             <AcerDetails></AcerDetails>
