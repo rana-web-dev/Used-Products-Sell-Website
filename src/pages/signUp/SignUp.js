@@ -47,7 +47,7 @@ const SignUp = () => {
         toast.success("User Create Successfully.", {
           position: toast.POSITION.TOP_CENTER
         })
-        
+
         // set user name that come from input name field
         const userInfo = {
           displayName: name,
